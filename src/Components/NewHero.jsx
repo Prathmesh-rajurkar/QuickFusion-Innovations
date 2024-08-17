@@ -27,25 +27,25 @@ export const FadeUp = (delay) => {
 
 export const NewHero = () => {
     return (
-        <section className="bg-slate-950 overflow-hidden relative h-[100vh]">
+        <section className="bg-slate-950 overflow-hidden relative lg:h-[100vh] h-auto">
             <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[650px]">
                 {/* Brand Info */}
                 <div className="flex flex-col justify-center py-14 md:py-0 relative z-10">
-                    
-                    <div className="text-center md:text-left space-y-10 lg:max-w-[80%] mt-10">
-                    <motion.h1
-                        variants={FadeUp(0.6)}
-                        initial="initial"
-                        animate="animate"
-                        className='text-5xl lg:text-5xl font-bold !leading-snug ml-10'>
-                        Quick<span className='text-blue-500'>Fusion</span> Innov<span className='text-blue-500'>ations</span>
-                    </motion.h1>
+
+                    <div className="text-center justify-center items-center md:text-left space-y-10 lg:max-w-[80%] mt-10 p-6">
+                        <motion.h1
+                            variants={FadeUp(0.6)}
+                            initial="initial"
+                            animate="animate"
+                            className='text-5xl lg:text-5xl font-bold !leading-snug lg:ml-10'>
+                            Quick<span className='text-blue-500'>Fusion</span> Innov<span className='text-blue-500'>ations</span>
+                        </motion.h1>
 
                         <motion.h6
                             variants={FadeUp(0.6)}
                             initial="initial"
                             animate="animate"
-                            className="text-3xl lg:text-5xl font-semibold !leading-snug ml-10"
+                            className="text-3xl lg:text-5xl font-semibold !leading-snug lg:ml-10"
                         >
                             Let's Start to build up{" "}
                             <span className="text-secondary">Your Digital</span> presence with
