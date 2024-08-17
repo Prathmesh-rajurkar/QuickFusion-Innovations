@@ -1,0 +1,133 @@
+/* Container styling for form and image */
+.container {
+  display: flex;
+  flex-direction: row; /* Ensures form and image are in the same row */
+  justify-content: space-between; /* Creates space between the form and the image */
+  max-width: auto;
+  margin: 0 auto;
+  margin-top: 40px;
+  align-items: flex-start; /* Aligns items to the top */
+  gap: 20px; /* Adds spacing between the form and the image */
+  padding: 0 16px; /* Adds padding for better spacing on mobile */
+}
+
+/* Top button styling */
+.top_btn {
+  display: flex;
+  gap: 16px; /* Reduced gap for better spacing on smaller screens */
+  flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+  margin-bottom: 50px;
+}
+
+/* Contact form styling */
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Reduced gap for better spacing on smaller screens */
+  width: 39%; /* Ensures the form takes up 39% of the container */
+  margin-left: 50px;
+}
+
+/* Form styling */
+.contact_form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Reduced gap for better spacing on smaller screens */
+  padding-bottom: 20px;
+}
+
+/* Form control styling */
+.form_control {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+/* Input and textarea styling */
+.form_control input,
+.form_control textarea {
+  width: 100%; /* Ensures input fields take full width */
+  border-radius: 4px; /* Adds subtle rounding of corners */
+  padding: 8px; /* Unified padding for inputs and textarea */
+  font-size: 16px; /* Increased font size for readability */
+  background-color: #4e4e61;
+}
+
+/* Textarea specific styling */
+.form_control textarea {
+  resize: vertical; /* Allows vertical resizing but not horizontal */
+}
+
+/* Label styling */
+.form_control label {
+  font-size: 14px;
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  padding: 0 8px; /* Adjusted padding for better label placement */
+  color: #fff; /* Subtle color for the label */
+}
+
+/* Image container styling */
+.contact_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%; /* Ensures the image takes up 45% of the container */
+}
+
+/* Image styling */
+.contact_image img {
+  width: 80%; /* Ensures image scales responsively */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 8px; /* Adds subtle rounding to the image */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .contact_form {
+    width: 48%; /* Slightly more space for form on medium screens */
+  }
+
+  .contact_image {
+    width: 48%; /* Slightly more space for image on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stacks form and image on top of each other on smaller screens */
+    align-items: center; /* Centers items in the column layout */
+  }
+
+  .contact_form,
+  .contact_image {
+    width: 100%; /* Full width for both form and image on smaller screens */
+  }
+
+  .contact_image img {
+    width: 100%; /* Ensures image scales to full width */
+    height: auto; /* Maintains aspect ratio */
+  }
+}
+
+@media (max-width: 480px) {
+  .top_btn {
+    gap: 8px; /* Reduces gap between buttons for smaller screens */
+  }
+
+  .form_control input,
+  .form_control textarea {
+    font-size: 14px; /* Slightly smaller font for small screens */
+    padding: 6px; /* Reduces padding for smaller screens */
+  }
+
+  .contact_form {
+    gap: 12px; /* Reduces gap between form elements */
+  }
+
+  .form_control label {
+    font-size: 12px; /* Smaller label text for better fit */
+  }
+}
