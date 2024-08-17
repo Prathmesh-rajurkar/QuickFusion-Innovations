@@ -40,7 +40,7 @@ const Hero = () => {
   }, [currentText, isDeleting, letterIndex, words, currentWordIndex]);
 
   return (
-    <div id='home' className='pt-20 px-4 pb-4 w-full h-auto lg:h-screen bg-slate-950'>
+    <div id='home' className='flex sm:items-center sm:justify-center pt-20 px-4 pb-4 w-full h-[100vh] lg:h-screen bg-slate-950'>
       <div className='flex flex-wrap'>
         <div className='w-full lg:w-1/2'>
           <div className='flex flex-col items-center lg:items-start lg:ml-10'>

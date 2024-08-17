@@ -6,6 +6,7 @@ import Founders from '../Components/Founders';
 import Contact from '../Components/Contact';
 import Loader from '../Components/Loader';
 import Footer from '../Components/Footer';
+import { NewHero } from '../Components/NewHero';
 
 const HomePage = () => {
     const [loading, setLoading] = useState(true);
@@ -26,7 +27,8 @@ const HomePage = () => {
                 <div className='overflow-x-hidden text-slate-950 antialiased'>
                     <div className=' container text-neutral-300'>
                         <Navbar />
-                        <Hero />
+                        {/* <Hero /> */}
+                        <NewHero/>
                         <About />
                         <Founders />
                         <Footer />
