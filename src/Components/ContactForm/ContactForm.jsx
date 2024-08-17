@@ -7,10 +7,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const ContactForm = () => {
-  const [name, setName] = useState("Pratik Patel");
-  const [email, setEmail] = useState("quickfusioninnovations@gmail.com");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [text, setText] = useState("");
-
   const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
@@ -22,7 +21,7 @@ const ContactForm = () => {
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: formData
+      body: formData,
     });
 
     const data = await response.json();
@@ -37,69 +36,91 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="flex flex-col lg:flex-row justify-center items-center min-h-screen mx-auto mt-10 gap-44 px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col gap-4 lg:w-2/5 xl:w-1/3">
-        <motion.div className="flex gap-4 flex-wrap mb-12"
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.8 }}
-        >
+    <section className="flex flex-col lg:flex-row justify-center items-center min-h-screen mx-auto mt-10 gap-16 px-4 sm:px-6 lg:px-8">
+      <motion.div
+        className="flex flex-col gap-4 lg:w-2/5 xl:w-1/3"
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="flex gap-4 flex-wrap mb-8">
           <Button
             text="VIA SUPPORT CHAT"
             icon={<MdMessage className="text-xl" />}
           />
           <Button text="VIA CALL" icon={<FaPhoneAlt className="text-xl" />} />
-        </motion.div>
-        {/* <Button
-      isOutline={true}
-      text="VIA EMAIL FORM"
-      icon={<HiMail className="text-xl" />}
-    /> */}
-        <motion.form onSubmit={onSubmit} className="flex flex-col gap-4 pb-5"
+        </div>
+        <motion.form
+          onSubmit={onSubmit}
+          className="flex flex-col gap-4 pb-5"
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.8 }}
         >
           <div className="relative flex flex-col w-full">
-            <label htmlFor="name" className="text-sm absolute -top-3 left-2 bg-gray-900 px-1 text-white">Name</label>
+            <label
+              htmlFor="name"
+              className="text-sm absolute -top-3 left-2 bg-gray-900 px-1 text-white"
+            >
+              Name
+            </label>
             <input
               type="text"
               name="name"
               className="w-full h-10 px-2 border border-gray-600 rounded bg-gray-700 text-white"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="relative flex flex-col w-full">
-            <label htmlFor="email" className="text-sm absolute -top-3 left-2 bg-gray-900 px-1 text-white">Email</label>
+            <label
+              htmlFor="email"
+              className="text-sm absolute -top-3 left-2 bg-gray-900 px-1 text-white"
+            >
+              Email
+            </label>
             <input
               type="email"
               name="email"
               className="w-full h-10 px-2 border border-gray-600 rounded bg-gray-700 text-white"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="relative flex flex-col w-full">
-            <label htmlFor="text" className="text-sm absolute -top-3 left-2 bg-gray-900 px-1 text-white">Text</label>
+            <label
+              htmlFor="text"
+              className="text-sm absolute -top-3 left-2 bg-gray-900 px-1 text-white"
+            >
+              Message
+            </label>
             <textarea
               name="Message"
               rows="8"
               className="w-full px-2 border border-gray-600 rounded bg-gray-700 text-white resize-y"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
             />
           </div>
           <div className="flex-col justify-end">
-            <Button text="SUBMIT BUTTON" />
-            <span className=' block my-5 text-[#b3afaf]'>{result}</span>
+            <Button text="SUBMIT" />
+            <span className="block my-5 text-[#b3afaf]">{result}</span>
           </div>
         </motion.form>
-      </div>
-      <motion.div className="flex justify-center items-center lg:w-[80%] xl:w-1/3"
+      </motion.div>
+      <motion.div
+        className="flex justify-center items-center lg:w-[80%] xl:w-1/3"
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: 100 }}
         transition={{ duration: 0.8 }}
       >
-        <img src="/images/contact.svg" alt="contact image" className="w-4/5 h-auto rounded-md" />
+        <img
+          src="/images/contact.svg"
+          alt="contact image"
+          className="w-4/5 h-auto rounded-md"
+        />
       </motion.div>
     </section>
-
-
   );
 };
 
